@@ -2,6 +2,7 @@
 #include <ntdef.h>
 #include "Common.h"
 #include "dispatch.h"
+#include "Callback.h"
 
 #define DRIVER_NAME  L"\\Device\\Crash_Dump"
 #define DRIVER_DOS_NAME  L"\\DosDevices\\Crash_Dump"
@@ -10,6 +11,7 @@ void driver_unload(PDRIVER_OBJECT DriverObject) {
 	UNICODE_STRING driver_dos_name;
 	RtlInitUnicodeString(&driver_dos_name, DRIVER_DOS_NAME);
 	IoDeleteSymbolicLink(&driver_dos_name);
+	PsRemoveLoadImageNotifyRoutine(load_iimage_notfy);
 	IoDeleteDevice(DriverObject->DeviceObject);
 }
 
@@ -51,6 +53,14 @@ DriverEntry(
 	if (!NT_SUCCESS(status)) {
 		DPRINT("[CrashDump]:link device object error 0x%X", status);
 		return status;
+	}
+	status = PsSetLoadImageNotifyRoutine(load_iimage_notfy);
+	if (!NT_SUCCESS(status)) {
+		DPRINT("[CrashDump]:set image callback error 0x%X", status);
+		return status;
+	}
+	else {
+		DPRINT("[CrashDump]:set image callback success");
 	}
 	DPRINT("[CrashDump]:Load Success");
 	return STATUS_SUCCESS;

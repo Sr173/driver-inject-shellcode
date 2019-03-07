@@ -6,10 +6,10 @@ NTSTATUS driver_irp_dispatch(PDEVICE_OBJECT DeviceObject, PIRP Irp) {
 	auto irp_sp = IoGetCurrentIrpStackLocation(Irp);
 	auto in_buffer_lenth = irp_sp->Parameters.DeviceIoControl.InputBufferLength;
 	auto out_buffer_lenth = irp_sp->Parameters.DeviceIoControl.OutputBufferLength;
-	auto in_buffer = (PUCHAR)Irp->AssociatedIrp.SystemBuffer;
-	auto out_buffer = (PUCHAR)Irp->AssociatedIrp.SystemBuffer;
+	//auto in_buffer = (PUCHAR)Irp->AssociatedIrp.SystemBuffer;
+	//auto out_buffer = (PUCHAR)Irp->AssociatedIrp.SystemBuffer;
 	auto nt_status = STATUS_SUCCESS;
-
+	
 	do {
 		if (!in_buffer_lenth || !out_buffer_lenth) {
 			nt_status = STATUS_INVALID_PARAMETER;
