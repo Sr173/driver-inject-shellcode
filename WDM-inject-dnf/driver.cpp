@@ -4,8 +4,8 @@
 #include "dispatch.h"
 #include "Callback.h"
 
-#define DRIVER_NAME  L"\\Device\\Crash_Dump"
-#define DRIVER_DOS_NAME  L"\\DosDevices\\Crash_Dump"
+#define DRIVER_NAME  L"\\Device\\CrashDump"
+#define DRIVER_DOS_NAME  L"\\DosDevices\\CrashDump"
 
 void driver_unload(PDRIVER_OBJECT DriverObject) {
 	UNICODE_STRING driver_dos_name;
@@ -43,6 +43,9 @@ DriverEntry(
 		return status;
 	}
 	DriverObject->DriverUnload = driver_unload;
+
+	DriverObject->MajorFunction[IRP_MJ_CREATE] =
+	DriverObject->MajorFunction[IRP_MJ_CLOSE] =
 	DriverObject->MajorFunction[IRP_MJ_DEVICE_CONTROL] = driver_irp_dispatch;
 
 	RtlInitUnicodeString(&driver_dos_name, DRIVER_DOS_NAME);

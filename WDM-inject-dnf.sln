@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.28922.388
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WDM-inject-dnf", "WDM-inject-dnf\WDM-inject-dnf.vcxproj", "{E0FF7FF0-24BF-4ECF-B0EC-262A68B47194}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DriverLoader", "DriverLoader\DriverLoader.vcxproj", "{530AC81B-C2D9-4F71-9793-139EF0B3D7F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
@@ -41,6 +43,18 @@ Global
 		{E0FF7FF0-24BF-4ECF-B0EC-262A68B47194}.Release|x86.ActiveCfg = Release|Win32
 		{E0FF7FF0-24BF-4ECF-B0EC-262A68B47194}.Release|x86.Build.0 = Release|Win32
 		{E0FF7FF0-24BF-4ECF-B0EC-262A68B47194}.Release|x86.Deploy.0 = Release|Win32
+		{530AC81B-C2D9-4F71-9793-139EF0B3D7F2}.Debug|ARM.ActiveCfg = Debug|Win32
+		{530AC81B-C2D9-4F71-9793-139EF0B3D7F2}.Debug|ARM64.ActiveCfg = Debug|Win32
+		{530AC81B-C2D9-4F71-9793-139EF0B3D7F2}.Debug|x64.ActiveCfg = Debug|x64
+		{530AC81B-C2D9-4F71-9793-139EF0B3D7F2}.Debug|x64.Build.0 = Debug|x64
+		{530AC81B-C2D9-4F71-9793-139EF0B3D7F2}.Debug|x86.ActiveCfg = Debug|Win32
+		{530AC81B-C2D9-4F71-9793-139EF0B3D7F2}.Debug|x86.Build.0 = Debug|Win32
+		{530AC81B-C2D9-4F71-9793-139EF0B3D7F2}.Release|ARM.ActiveCfg = Release|Win32
+		{530AC81B-C2D9-4F71-9793-139EF0B3D7F2}.Release|ARM64.ActiveCfg = Release|Win32
+		{530AC81B-C2D9-4F71-9793-139EF0B3D7F2}.Release|x64.ActiveCfg = Release|x64
+		{530AC81B-C2D9-4F71-9793-139EF0B3D7F2}.Release|x64.Build.0 = Release|x64
+		{530AC81B-C2D9-4F71-9793-139EF0B3D7F2}.Release|x86.ActiveCfg = Release|Win32
+		{530AC81B-C2D9-4F71-9793-139EF0B3D7F2}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
