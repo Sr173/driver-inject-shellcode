@@ -141,10 +141,12 @@
   <ItemGroup>
     <ClCompile Include="dispatch.cpp" />
     <ClCompile Include="driver.cpp" />
+    <ClCompile Include="Inject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h" />
     <ClInclude Include="dispatch.h" />
+    <ClInclude Include="Inject.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

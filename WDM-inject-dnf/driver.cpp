@@ -52,5 +52,6 @@ DriverEntry(
 		DPRINT("[CrashDump]:link device object error 0x%X", status);
 		return status;
 	}
+	DPRINT("[CrashDump]:Load Success");
 	return STATUS_SUCCESS;
 }
